@@ -39,14 +39,15 @@ public class LeJustePrix {
 		int prix = 0;
 		int compteur = 1;
 		while (prix != justePrix && compteur <= CHANCE_MAX) {
-			compteur++;
 			try {
 	            prix = Integer.valueOf(READER.nextLine());
 	            if (prix < justePrix) {
 	                System.out.println("C'est plus...");
+	                compteur++;
 	            }
 	            if (prix > justePrix) {
 	                System.out.println("C'est moins...");
+	                compteur++;
 	            }
 			} catch (Exception e) {
 				System.err.println("Erreur de saisie !");
@@ -62,10 +63,10 @@ public class LeJustePrix {
 	
 	private static void affichageObjet() {
 		System.out.println("Selectionner un objet et tenter de trouver le juste prix !");
-		System.out.println(String.format("(La saisie doit être comprise entre 1 et %d)", JUSTE_PRIX_A_TROUVER.length));
 		for (int i = 0; i < JUSTE_PRIX_A_TROUVER.length; i++) {
 			System.out.println(i+1 + ". " + JUSTE_PRIX_A_TROUVER[i][0]);
 		}
+		System.out.println(String.format("Quelle est votre choix ? (La saisie doit être comprise entre 1 et %d)", JUSTE_PRIX_A_TROUVER.length));
 	}
 	
 	private static void erreurSaisieObjet() {
