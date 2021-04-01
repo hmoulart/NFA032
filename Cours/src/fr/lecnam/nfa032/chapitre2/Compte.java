@@ -1,17 +1,19 @@
 package fr.lecnam.nfa032.chapitre2;
 
-class Compte {
+public class Compte {
 	int solde;
 	String titulaire;
 	int numero;
 
-	void afficher(){
+	void afficher() {
 		System.out.println("solde: " + this.solde);
 	}
-	void deposer(int montant){
+
+	void deposer(int montant) {
 		this.solde = this.solde + montant;
 	}
-	void retirer(int montant){
+
+	void retirer(int montant) {
 		this.solde = this.solde - montant;
 	}
 }
