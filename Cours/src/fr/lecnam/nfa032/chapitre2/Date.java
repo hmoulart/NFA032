@@ -4,7 +4,7 @@ public class Date {
 	int jour;
 	int mois;
 	int annee;
-	static int nb; // Variable statique 
+	static int nb; // Variable statique
 	
 	public Date() {
 		this.jour = 1;
