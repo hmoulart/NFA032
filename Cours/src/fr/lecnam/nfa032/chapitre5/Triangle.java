@@ -1,0 +1,19 @@
+package fr.lecnam.nfa032.chapitre5;
+
+class Triangle implements AvecSurface {
+	Point p1, p2, p3;
+
+	Triangle(Point p1i, Point p2i, Point p3i) {
+		p1 = p1i;
+		p2 = p2i;
+		p3 = p3i;
+	}
+
+	public double surface() {
+		double a = Point.distance(p1, p2);
+		double b = Point.distance(p1, p3);
+		double c = Point.distance(p2, p3);
+		double demiper = (a + b + c) / 2;
+		return Math.sqrt(demiper * (demiper - a) * (demiper - b) * (demiper - c));
+	}
+}
