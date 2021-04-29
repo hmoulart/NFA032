@@ -1,6 +1,6 @@
 package fr.lecnam.nfa032.chapitre5;
 
-public class Point {
+public class Point implements AvecTranslation {
 	double x, y;
 
 	Point(double xi, double yi) {
@@ -12,4 +12,8 @@ public class Point {
 		return Math.sqrt((p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y));
 	}
 
+	public void translation(double deplHor, double deplVer) {
+		x = x + deplHor;
+		y = y + deplVer;
+	}
 }

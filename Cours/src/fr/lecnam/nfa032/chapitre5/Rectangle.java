@@ -1,6 +1,6 @@
 package fr.lecnam.nfa032.chapitre5;
 
-public class Rectangle implements AvecSurface {
+public class Rectangle implements AvecSurface, AvecTranslation {
 
 	Point basGauche;
 	double dimHor, dimVer;
@@ -15,4 +15,17 @@ public class Rectangle implements AvecSurface {
 		return dimHor * dimVer;
 	}
 
+	public void translation(double deplHor, double deplVer) {
+		basGauche.translation(deplHor, deplVer);
+	}
+
+	public int compareSurface(AvecSurface as) {
+		int res = 0;
+		if (this.surface() < as.surface()) {
+			res = -1;
+		} else if (this.surface() > as.surface()) {
+			res = 1;
+		}
+		return res;
+	}
 }
